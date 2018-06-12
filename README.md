@@ -1,4 +1,4 @@
-**Backend: Logs Analysis Project**
+# Backend: Logs Analysis Project**
 **Udacity: Full Stack Web Development Nanodegree**
 
 **Licensing:** 
@@ -19,26 +19,27 @@ This project consists of creating a reporting tool that outputs plain text repor
 
 **Install:**
 
-Python2.7
-PostgreSQL
-Vagrant
-Virtual Box
+* Python2.7
+* PostgreSQL
+* Vagrant
+* Virtual Box
 
 **Instructions:**
 
--Clone/download this repo into the /vagrant directory.
--Download the newsdata.sql data file from Udacity. 
--Move zip file contents into cloned /vagrant/LOGS_ANALYSIS_PROJECT directory
--Launch the VM: vagrant$ vagrant up
--SSH into the VM: On Mac/Linux vagrant$ vagrant ssh, Windows use Putty or similar SSH client
--In the VM navigate to the /vagrant/LOGS_ANALYSIS_PROJECT directory
--Load the data into the news database that is already in the VM: $psql -d news -f newsdata.sql
--Run the create view commands in the database views section.
--Run python report script: $ python logs_analysis.py
+* Clone/download this repo into the /vagrant directory.
+* Download the newsdata.sql data file from Udacity. 
+* Move zip file contents into cloned /vagrant/LOGS_ANALYSIS_PROJECT directory
+* Launch the VM: vagrant$ vagrant up
+* SSH into the VM: On Mac/Linux vagrant$ vagrant ssh, Windows use Putty or similar SSH client
+* In the VM navigate to the /vagrant/LOGS_ANALYSIS_PROJECT directory
+* Load the data into the news database that is already in the VM: $psql -d news -f newsdata.sql
+* Run the create view commands in the database views section.
+* Run python report script: $ python logs_analysis.py
 
 
 **Create View Commands:**
 
+```
 top_views:
 CREATE VIEW top_views AS SELECT
 articles.title, articles.id, articles.author,
@@ -65,3 +66,4 @@ FROM(
     WHERE log.status::text != '200 OK'
     group by 1 order by errors DESC) errors
   ON day = day2);
+```
