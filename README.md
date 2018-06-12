@@ -1,4 +1,4 @@
-# Backend: Logs Analysis Project**
+# Backend: Logs Analysis Project
 **Udacity: Full Stack Web Development Nanodegree**
 
 **Licensing:** 
